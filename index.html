@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Yash Deviprasad Upadhyay - Portfolio, Education, Goals, Achievements" />
+    <meta name="author" content="Yash Deviprasad Upadhyay" />
+    <meta property="og:title" content="Yash Portfolio" />
+    <meta property="og:image" content="your-preview-image.png" />
+    <meta property="og:description" content="Personal introduction portfolio site." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="favicon.ico" />
+    <title>Yash Deviprasad Upadhyay - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0074D9',
+              light: '#f0f8ff'
+            }
+          }
+        }
+      }
+    </script>
+    <script defer>
+      function toggleMenu() {
+        const nav = document.getElementById('mobile-nav');
+        nav.classList.toggle('hidden');
+      }
+    </script>
+  </head>
+  <body class="bg-light text-blue-950 font-sans">
+    <header class="bg-primary text-white py-4 px-6 flex flex-wrap justify-between items-center">
+      <h1 class="text-xl md:text-3xl font-bold">Yash Portfolio</h1>
+      <button class="md:hidden text-white text-2xl" onclick="toggleMenu()">☰</button>
+      <nav id="mobile-nav" class="w-full md:w-auto md:flex gap-6 text-white font-medium hidden md:block mt-4 md:mt-0">
+        <ul class="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
+          <li><a href="#about" class="hover:underline">About</a></li>
+          <li><a href="#achievement" class="hover:underline">Achievements</a></li>
+          <li><a href="#goal" class="hover:underline">Goal</a></li>
+          <li><a href="#contact" class="hover:underline">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="px-4 md:px-16 space-y-10 py-10">
+      <section id="about" class="bg-white rounded-xl shadow-lg p-6">
+        <h2 class="text-2xl font-semibold text-primary border-b border-primary mb-4 pb-2">About Me</h2>
+        <div class="flex flex-col md:flex-row gap-6 items-center">
+          <img src="yash.jpeg" alt="Profile photo of Yash" class="rounded-full w-48 h-48 object-cover shadow-md" />
+          <div class="flex-1 w-full aspect-video rounded-lg shadow-md overflow-hidden">
+            <iframe src="https://www.youtube.com/embed/Tm1u6-JnCmE" class="w-full h-full" allowfullscreen></iframe>
+          </div>
+        </div>
+        <p class="mt-4">I am Yash Deviprasad Upadhyay, a passionate Electronics and Computer Science Engineering student at Mumbai University. I am driven by curiosity and a desire to innovate through software development and technology.</p>
+      </section>
+
+      <section id="achievement" class="bg-white rounded-xl shadow-lg p-6">
+        <h2 class="text-2xl font-semibold text-primary border-b border-primary mb-4 pb-2">Achievements</h2>
+        <ul class="list-disc pl-6 space-y-2" id="achievements"></ul>
+      </section>
+
+      <section id="goal" class="bg-white rounded-xl shadow-lg p-6">
+        <h2 class="text-2xl font-semibold text-primary border-b border-primary mb-4 pb-2">Goal</h2>
+        <p>My goal is to become a leading software engineer specialized in AI and machine learning, creating impactful solutions that transform industries and improve lives. I aim to build a CV that gets recognized by MNCs.</p>
+      </section>
+
+      <section id="contact" class="bg-white rounded-xl shadow-lg p-6">
+        <h2 class="text-2xl font-semibold text-primary border-b border-primary mb-4 pb-2">Contact Me</h2>
+        <ul class="space-y-2 mb-4">
+          <li><strong>Phone:</strong> <a href="tel:+918999662955" class="text-primary underline">+91-8999662955</a></li>
+          <li><strong>WhatsApp:</strong> <a href="https://wa.me/918999662955" class="text-primary underline" target="_blank">Chat on WhatsApp</a></li>
+          <li><strong>Email:</strong> <a href="mailto:y89996629@gmail.com" class="text-primary underline">y89996629@gmail.com</a></li>
+        </ul>
+
+        <div class="flex flex-wrap gap-4 mb-6">
+          <a href="https://github.com/yourhandle" class="text-primary underline" target="_blank">GitHub</a>
+          <a href="https://linkedin.com/in/yourhandle" class="text-primary underline" target="_blank">LinkedIn</a>
+          <a href="https://twitter.com/yourhandle" class="text-primary underline" target="_blank">Twitter</a>
+          <a href="https://instagram.com/yourhandle" class="text-primary underline" target="_blank">Instagram</a>
+        </div>
+
+        <form action="https://formspree.io/f/yourformid" method="POST" class="space-y-4 mb-6">
+          <input type="text" name="name" placeholder="Your Name" required class="w-full border border-gray-300 rounded p-2" />
+          <input type="email" name="email" placeholder="Your Email" required class="w-full border border-gray-300 rounded p-2" />
+          <textarea name="message" placeholder="Your Message" required class="w-full border border-gray-300 rounded p-2"></textarea>
+          <button type="submit" class="bg-primary text-white px-4 py-2 rounded hover:bg-blue-800">Send Message</button>
+        </form>
+
+        <div class="mt-6">
+          <h3 class="text-lg font-medium text-primary mb-2">My Location</h3>
+          <iframe class="w-full h-64 rounded-md shadow" src="https://maps.google.com/maps?q=Palghar,%20Maharashtra&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </section>
+    </main>
+
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="fixed bottom-6 right-6 bg-primary text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-800">↑ Top</button>
+
+    <script>
+      fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+          const list = document.getElementById('achievements');
+          data.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.title} (${item.year})`;
+            list.appendChild(li);
+          });
+        });
+    </script>
+  </body>
+</html>
